@@ -35,7 +35,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     public void deleteUserInfo(String user_cellphone) {
         userInfoMapper.deleteUserInfo(user_cellphone);
     }
-
+//sdaf
     @Override
     public LoanAppVo getUserLoanInfo(Long loanAppId) {
         return loanAppClient.getApplication(loanAppId);
