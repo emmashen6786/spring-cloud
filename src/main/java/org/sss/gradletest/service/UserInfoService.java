@@ -12,4 +12,6 @@ public interface UserInfoService {
     void deleteUserInfo(String user_cellphone);
 
     LoanAppVo getUserLoanInfo(Long loanAppId);
+
+    String getAuthorizations(Long name, Long channelId);
 }

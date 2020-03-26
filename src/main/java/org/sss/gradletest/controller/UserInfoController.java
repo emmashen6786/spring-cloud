@@ -40,4 +40,8 @@ public class UserInfoController {
         return userInfoService.getUserLoanInfo(loanAppId);
     }
 
+    @GetMapping("/v1/borrowers/{aid}/authorizations")
+    public String getAuthorizations(@PathVariable Long aid, @RequestParam Long channelId) {
+        return userInfoService.getAuthorizations(aid, channelId);
+    }
 }

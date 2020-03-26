@@ -32,4 +32,5 @@ dependencies {
     compile 'com.dianrong.ftc.loanapp:spi:1.2.1'
     compile 'com.dianrong.common:utility-feign:r1.1'
 //    compile 'com.dianrong.common:util:2.0.8.RELEASE'
+    compile 'com.dianrong.common:http:2.0.5-SNAPSHOT'
 }
