@@ -1,11 +1,10 @@
 package org.sss.gradletest.controller;
 
+import com.dianrong.ftc.loanapp.spi.domain.loan.LoanAppVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.sss.gradletest.service.UserInfo;
 import org.sss.gradletest.service.UserInfoService;
 
-import javax.websocket.server.PathParam;
 
 @RestController
 public class UserInfoController {
@@ -24,21 +23,21 @@ public class UserInfoController {
 //        return "添加成功";
 //    }
 
-    @PostMapping("v1/user")
+    @PostMapping("/v1/user")
     public String updateUserInfo(@RequestParam String user_name, @RequestParam String user_cellphone) {
         userInfoService.updateUserInfo(user_name, user_cellphone);
         return "更新成功";
     }
 
-    @PostMapping("v1/delete_user")
+    @PostMapping("/v1/delete_user")
     public String deleteUserInfo(@RequestParam String user_cellphone) {
         userInfoService.deleteUserInfo(user_cellphone);
         return "删除成功";
     }
 
-    @GetMapping("v1/get_user_loan_info")
-    public UserInfo getUserLoanInfo(@RequestParam String user_cellphone) {
-
+    @GetMapping("/v1/get_user_loan_info")
+    public LoanAppVo getUserLoanInfo(@RequestParam Long loanAppId) {
+        return userInfoService.getUserLoanInfo(loanAppId);
     }
 
 }

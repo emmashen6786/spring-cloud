@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.sss.gradletest.mapper.UserInfoMapper">
+    <select id="getUserName" resultType="java.lang.String">
+        SELECT user_name
+        FROM s_user
+        WHERE user_cellphone = #{user_cellphone}
+        limit 1
+    </select>
+    <insert id="addUserInfo">
+        insert into s_user (user_name,user_cellphone)
+        values(#{user_name},#{user_cellphone})
+    </insert>
+    <update id="updateUserInfo">
+        update s_user set user_name=#{user_name} where user_cellphone=#{user_cellphone}
+    </update>
+    <delete id="deleteUserInfo">
+        delete from s_user where user_cellphone=#{user_cellphone}
+    </delete>
+
+</mapper>

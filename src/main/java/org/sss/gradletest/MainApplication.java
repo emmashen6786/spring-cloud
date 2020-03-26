@@ -23,7 +23,7 @@ public class MainApplication {
         FeignClientBuilder feignClientBuilder = new FeignClientBuilder("ftc-saas-collection-job");
         RemoteAppConfig remoteAppConfig = RemoteAppConfig.newBuilder()
                 .remoteAppId("ftc-loanapp")
-                .url("http://ftc-saas-user-demo.aliyun-cn-shanghai-b.ftc.dianrong.io/api").build();
+                .url("http://ftc-saas-loanapp-demo.b8.ftc.dianrong.io").build();
         FeignClientConfig feignClientConfig = new FeignClientConfig();
         return feignClientBuilder.buildClient(LoanAppClient.class, remoteAppConfig, feignClientConfig);
     }

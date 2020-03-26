@@ -15,8 +15,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public String getUserName(String user_cellphone) {
-        String name = userInfoMapper.getUserName(user_cellphone);
-        return name;
+        return userInfoMapper.getUserName(user_cellphone);
     }
 
 //    @Override
@@ -35,7 +34,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     public void deleteUserInfo(String user_cellphone) {
         userInfoMapper.deleteUserInfo(user_cellphone);
     }
-//sdaf111
+
     @Override
     public LoanAppVo getUserLoanInfo(Long loanAppId) {
         return loanAppClient.getApplication(loanAppId);
